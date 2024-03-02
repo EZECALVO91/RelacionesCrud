@@ -97,14 +97,15 @@ const moviesController = {
 
     update:  (req,res) => {
         const id = req.params.id;
+        const { title, rating, awards, release_date,length,genre_id } = req.body;
         Movies.update(
             {
-                title: req.body.title,
-                rating: req.body.rating,
-                awards: req.body.awards,
-                release_date: req.body.release_date,
-                length: req.body.length,
-                genre_id: req.body.genre_id
+                title: title,
+                rating: rating,
+                awards: awards,
+                release_date: release_date,
+                length: length,
+                genre_id: genre_id
             },
             {where: {id: id}
             })
